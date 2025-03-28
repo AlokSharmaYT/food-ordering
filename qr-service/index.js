@@ -6,7 +6,7 @@ const port = 3000;
 
 // Route to generate QR code dynamically for a URL
 app.get('/generate', async (req, res) => {
-  const url = 'https://www.youtube.com/'; // Change this to your target URL
+  const url = 'https://enchanting-pika-b4bf8f.netlify.app/'; // Change this to your target URL
   try {
     const qrImage = await QRCode.toDataURL(url);
     res.send(`<h2>Scan this QR Code to visit the website:</h2><img src="${qrImage}" alt="QR Code">`);
@@ -17,7 +17,7 @@ app.get('/generate', async (req, res) => {
 
 // When the QR is scanned, this route (if accessed) redirects to your website
 app.get('/', (req, res) => {
-  res.redirect('https://www.youtube.com/');
+  res.redirect('https://enchanting-pika-b4bf8f.netlify.app/');
 });
 
 app.listen(port, () => {
